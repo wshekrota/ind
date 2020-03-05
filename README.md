@@ -1,6 +1,7 @@
 
-**ind
-**elastic indices
+**ind**
+
+**elastic indices**
 
 Specification: I needed metrics for index status. But I needed more articulate numbers.
 _cat/indices passes back a large report. Needed was a more accurate status. This program returns
