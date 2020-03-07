@@ -27,8 +27,8 @@ The data element is an array of 3 integers. red/yellow/green
 This gives us an articulate status of what might be wrong. The data will be appropriate to report to checkmk.
 
 ```
-output of ind for this if all green
-map[index-name-prefix:[0,0,000068758787587]
+output of ind for this (if all green)
+map[index-name-prefix:[0,0,000068758787587]]
 ```
 
 SSL will work fine. I have not implemented client verify but you may specify either insecure or secure protocol.
