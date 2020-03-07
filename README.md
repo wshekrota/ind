@@ -28,7 +28,7 @@ This gives us an articulate status of what might be wrong. The data will be appr
 
 ```
 output of ind for this (if all green)
-map[index-name-prefix:[0,0,000068758787587]]
+map[log-yourname:[0,0,000068758787587]]
 ```
 
 SSL will work fine. I have not implemented client verify but you may specify either insecure or secure protocol.
