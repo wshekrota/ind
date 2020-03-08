@@ -77,20 +77,14 @@ func updateMap(v *map[string][3]int, health string, key string, size int) {
         }
 }
 
-func main() {
+func aggregate(host string, enc string) interface{} {
 
         // http handling
 	// call indices endpoint
 	//
-	host := os.Args[1]
+
 	var url = fmt.Sprintf("%s:9200/_cat/indices",host)
-        
-        user, err := user.Current()
-	if err != nil {
-		panic(err)
-	}
-	as := fmt.Sprintf("%s:%s", user.Username, os.Args[2])
-        enc := base64.StdEncoding.EncodeToString([]byte(as))
+
         auth := fmt.Sprintf("%s %s", "Basic", enc)
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
@@ -100,7 +94,7 @@ func main() {
 
         // add to header
 	req.Header.Set("Authorization", auth)
-        
+
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println("error", err)
@@ -145,7 +139,34 @@ func main() {
 		updateMap(&ind_map,strings.Join(words[0:1]," "),key,num)
 	}
 
-	// now print the hash or map
-        fmt.Println(ind_map)
+	// now return the map
+        return ind_map
 
+}
+
+
+/*
+   To call aggregate need
+   hostname
+   user:password for Authenticate
+   Returns map
+*/
+
+func main() {
+
+	// pass in hostname
+	host := os.Args[1]
+
+	// figure out this user
+        user, err := user.Current()
+	if err != nil {
+		panic(err)
+	}
+	// format clear
+	as := fmt.Sprintf("%s:%s", user.Username, os.Args[2])
+	// base64 encode to pass
+        enc := base64.StdEncoding.EncodeToString([]byte(as))
+
+	a := aggregate(host, enc).(map[string][3]int)
+	fmt.Println(a)
 }

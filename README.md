@@ -36,5 +36,12 @@ map[log-yourname:[0,0,68758787587]]
 ```
 
 SSL will work fine. I have not implemented client verify but you may specify either insecure or secure protocol.
+
+```
 example:
   ind https://hostname password
+Look in the main function for what is required to aggregate the endpoint.
+hostname
+user
+password
+```
