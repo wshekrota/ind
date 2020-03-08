@@ -25,13 +25,14 @@ green open log-yourname-2020.03.08 uDCpU01kTOK_iwMDY5Oapw 5 1  225504 0 141.7mb 
 4. 0 x x       going green
 5. 0 0 x       green ready
 ```
+
 Key of the hash is the unique part of the index name less date.
 The data element is an array of 3 integers. red/yellow/green
 This gives us an articulate status of what might be wrong. The data will be appropriate to report to checkmk.
 
 ```
 output of ind for this (if all green)
-map[log-yourname:[0,0,000068758787587]]
+map[log-yourname:[0,0,68758787587]]
 ```
 
 SSL will work fine. I have not implemented client verify but you may specify either insecure or secure protocol.
