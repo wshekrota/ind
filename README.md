@@ -1,10 +1,10 @@
-
+gate
 **ind**
 
 **elastic indices**
 
 Specification: I needed metrics for index status. But I needed more articulate numbers.
-_cat/indices passes back a large report. Needed was a more accurate status. This program returns
+_cat/indices passes back a large report. Needed was a more aggregate status. This program returns
 a hash where each key has a 3 element array. Each key is a grouped index name.
 ```
 _cat/indices (for a one name collection might look like)
