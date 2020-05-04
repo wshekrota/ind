@@ -1,5 +1,4 @@
-gate
-**ind**
+**ind** - is golang code to aggregate the output from an elastic endpoint
 
 **elastic indices**
 
