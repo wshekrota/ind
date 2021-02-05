@@ -1,4 +1,5 @@
-**ind** - is golang code to aggregate the output from an elastic endpoint
+**ind** - is golang code to aggregate the output from an elastic endpoint. 
+
   **Actually this could be generalized to a client for elasticsearch that could do any endpoint.**
 
 **elastic indices**
